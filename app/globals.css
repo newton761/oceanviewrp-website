@@ -1,0 +1,282 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+
+  --color-destructive: var(--destructive);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --radius-sm: calc(var(--radius) * .6);
+  --radius-md: calc(var(--radius) * .8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* =====================================================
+   OceanView RP Theme
+===================================================== */
+
+:root {
+
+  --background: #050b14;
+  --foreground: #ffffff;
+
+  --card: #07131d;
+  --card-foreground: #ffffff;
+
+  --popover: #07131d;
+  --popover-foreground: #ffffff;
+
+  --primary: #16c7f3;
+  --primary-foreground: #ffffff;
+
+  --secondary: #0b1826;
+  --secondary-foreground: #ffffff;
+
+  --muted: #0f1f30;
+  --muted-foreground: #c7cdd5;
+
+  --accent: #16c7f3;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+
+  --border: rgba(255,255,255,.08);
+  --input: rgba(255,255,255,.08);
+  --ring: #16c7f3;
+
+  --chart-1: #16c7f3;
+  --chart-2: #38d8ff;
+  --chart-3: #0891b2;
+  --chart-4: #67e8f9;
+  --chart-5: #155e75;
+
+  --radius: 1rem;
+
+  --sidebar: #07131d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #16c7f3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0f1f30;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255,255,255,.08);
+  --sidebar-ring: #16c7f3;
+}
+
+.dark {
+
+  --background: #050b14;
+  --foreground: #ffffff;
+
+  --card: #07131d;
+  --card-foreground: #ffffff;
+
+  --popover: #07131d;
+  --popover-foreground: #ffffff;
+
+  --primary: #16c7f3;
+  --primary-foreground: #ffffff;
+
+  --secondary: #0b1826;
+  --secondary-foreground: #ffffff;
+
+  --muted: #0f1f30;
+  --muted-foreground: #c7cdd5;
+
+  --accent: #16c7f3;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ef4444;
+
+  --border: rgba(255,255,255,.08);
+  --input: rgba(255,255,255,.08);
+  --ring: #16c7f3;
+
+  --chart-1: #16c7f3;
+  --chart-2: #38d8ff;
+  --chart-3: #0891b2;
+  --chart-4: #67e8f9;
+  --chart-5: #155e75;
+
+  --sidebar: #07131d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #16c7f3;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #0f1f30;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: rgba(255,255,255,.08);
+  --sidebar-ring: #16c7f3;
+}
+
+/* =====================================================
+   Base Styles
+===================================================== */
+
+@layer base {
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  img {
+    @apply select-none;
+  }
+
+  button {
+    @apply transition-all duration-300;
+  }
+
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  section {
+    @apply py-28;
+  }
+
+}
+
+/* =====================================================
+   OceanView Utility Classes
+===================================================== */
+
+@layer utilities {
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: #c7cdd5;
+    line-height: 1.75;
+    max-width: 42rem;
+  }
+
+  .card {
+    background: #07131d;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 1.5rem;
+    transition: all .3s ease;
+  }
+
+  .card:hover {
+    border-color: #16c7f3;
+    transform: translateY(-6px);
+  }
+
+  .glass {
+    background: rgba(255,255,255,.04);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,.08);
+  }
+
+  .btn-primary {
+    background: #16c7f3;
+    color: white;
+    padding: .9rem 2rem;
+    border-radius: .9rem;
+    font-weight: 700;
+    transition: .3s;
+  }
+
+  .btn-primary:hover {
+    background: #38d8ff;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.05);
+    color: white;
+    padding: .9rem 2rem;
+    border-radius: .9rem;
+    transition: .3s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,.10);
+    transform: translateY(-2px);
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg,#16c7f3,#38d8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,.08);
+  }
+
+}
