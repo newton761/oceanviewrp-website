@@ -1,5 +1,7 @@
 import Image from "next/image";
-import event from "./event";
+import { events } from "./events";
+
+const event = events[0];
 
 export default function EventsPage() {
   return (
