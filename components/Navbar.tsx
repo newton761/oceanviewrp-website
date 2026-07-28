@@ -13,6 +13,7 @@ const links = [
   { name: "Gallery", href: "/gallery" },
   { name: "Store", href: "/store" },
   { name: "Contact", href: "#contact" },
+  { name: "Events", href: "/events" },
 ];
 
 export default function Navbar() {
