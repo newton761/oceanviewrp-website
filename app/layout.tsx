@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import TikTokButton from "@/components/TikTokButton";
@@ -92,6 +93,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={geist.variable}>
       <body className="bg-[#050B14] text-white antialiased overflow-x-hidden">
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-4HXH9B8M06"
+    strategy="afterInteractive"
+  />
+  <Script id="google-analytics" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4HXH9B8M06');
+    `}
+  </Script>
+  {children}
         {children}
         <OrganizationSchema />
         <WebsiteSchema />
